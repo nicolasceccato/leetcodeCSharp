@@ -6,28 +6,13 @@ public class Solution {
             return x;
         }
 
-        int left = 1;
-        int right = x;
+        double result = x / 2.0;
 
-        while (left <= right)
+        while (result * result - x > 0.9)
         {
-            int mid = left + (right - left) / 2;
-            int sqrt = x / mid;
-
-            if (sqrt == mid)
-            {
-                return mid;
-            }
-            else if (sqrt < mid)
-            {
-                right = mid - 1;
-            }
-            else
-            {
-                left = mid + 1;
-            }
+            result = (result + x / result) / 2;
         }
 
-        return right;
+        return (int)result;
     }
 }
