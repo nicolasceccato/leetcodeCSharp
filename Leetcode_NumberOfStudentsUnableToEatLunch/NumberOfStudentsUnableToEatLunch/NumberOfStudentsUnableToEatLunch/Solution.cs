@@ -16,7 +16,20 @@ public class Solution {
                 queueOfSandwiches.Dequeue();
                 counter = 0;
             }
+            else
+            {
+                counter++;
+                if (counter > queueOfStudents.Count)
+                {
+                    break;
+                }
+
+                int item = queueOfStudents.Dequeue();
+                queueOfStudents.Enqueue(item);
+            }
         }
+
+        return queueOfStudents.Count;
 
     }
 }
